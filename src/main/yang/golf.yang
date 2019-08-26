@@ -11,8 +11,22 @@ module golf {
         type string;
       }
     }
-    container sub {
+
+    container from-submodule {
       uses sub-stuff;
+    }
+
+    container local {
+      leaf name {
+        type union {
+          type leafref {
+            path "../../main/name";
+          }
+          type enumeration {
+            enum none;
+          }
+        }
+      }
     }
   }
 }

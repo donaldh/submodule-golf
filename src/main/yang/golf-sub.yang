@@ -5,10 +5,17 @@ submodule golf-sub {
   }
 
   grouping sub-stuff {
-    leaf name {
+
+    leaf this-works {
+      type leafref {
+        path "../../main/name";
+      }
+    }
+
+    leaf broken {
       type union {
         type leafref {
-          path "../../../main/name";
+          path "../../main/name";
         }
       }
     }
