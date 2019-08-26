@@ -1,0 +1,18 @@
+module golf {
+  yang-version "1.1";
+  namespace "urn:submodule:golf";
+  prefix g;
+
+  include golf-sub;
+
+  container golf {
+    container main {
+      leaf name {
+        type string;
+      }
+    }
+    container sub {
+      uses sub-stuff;
+    }
+  }
+}
